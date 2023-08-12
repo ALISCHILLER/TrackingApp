@@ -15,6 +15,32 @@
     </fragment>
     <fragment
         android:id="@+id/listTrackingFragment"
-        android:name="com.msa.trackingapp.ListTrackingFragment"
-         />
+        android:name="com.msa.trackingapp.ui.fragment.ListTrackingFragment"
+         >
+        <action
+            android:id="@+id/action_listTrackingFragment_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.msa.trackingapp.ui.fragment.TrackingFragment"
+      >
+        <action
+            android:id="@+id/action_trackingFragment_to_listTrackingFragment"
+            app:destination="@id/listTrackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.msa.trackingapp.ui.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.msa.trackingapp.ui.fragment.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <action android:id="@+id/action_global_trackingFragment"
+        app:destination="@id/trackingFragment"
+        app:launchSingleTop="true"/>
 </navigation>

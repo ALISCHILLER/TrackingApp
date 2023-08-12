@@ -4,4 +4,17 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDIYP_jPhVudZeunfDab0xt9Qor2TPCx50</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="filter_options">
+        <item>تاریخ</item>
+        <item>زمان حرکت</item>
+        <item>فاصله</item>
+        <item>سرعت متوسط</item>
+        <item>کالری سوزانده شده</item>
+    </string-array>
+
+
+    <string name="your_runs">اطلاعات ثبت شده </string>
+    <string name="statistics">آمار</string>
+    <string name="settings">تنظیمات</string>
 </resources>
