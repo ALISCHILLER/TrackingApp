@@ -1,4 +1,4 @@
-package com.msa.trackingapp.service
+package com.msa.trackingapp.services
 
 
 import android.annotation.SuppressLint
@@ -16,7 +16,6 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.observe
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -108,7 +107,7 @@ class TrackingService : LifecycleService() {
                     pauseService()
                 }
                 ACTION_STOP_SERVICE -> {
-                    Timber.d("Stopped service.")
+                    Timber.d("Stopped services.")
                     killService()
                 }
             }
@@ -117,7 +116,7 @@ class TrackingService : LifecycleService() {
     }
 
     /**
-     * Stops the service properly.
+     * Stops the services properly.
      */
     private fun killService() {
         serviceKilled = true
@@ -224,7 +223,7 @@ class TrackingService : LifecycleService() {
     } ?: pathPoints.postValue(mutableListOf(mutableListOf()))
 
     /**
-     * Starts this service as a foreground service and creates the necessary notification
+     * Starts this services as a foreground services and creates the necessary notification
      */
     private fun startForegroundService() {
         Timber.d("TrackingService started.")
@@ -282,7 +281,6 @@ class TrackingService : LifecycleService() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(notificationManager: NotificationManager) {
         val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, IMPORTANCE_LOW)
         notificationManager.createNotificationChannel(channel)

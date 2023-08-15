@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.msa.trackingapp.R
 import com.msa.trackingapp.databinding.ActivityMainBinding
@@ -26,10 +27,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
+        val navController = navHostFragment.navController
 
         setSupportActionBar(binding.toolbar)
-        binding.bottomNavigationView.setupWithNavController(binding.navHost.findNavController())
+        binding.bottomNavigationView.setupWithNavController(navController)
         binding.bottomNavigationView.setOnNavigationItemReselectedListener { /* NO-OP */ }
 
         navigateToTrackingFragmentIfNeeded(intent)
@@ -39,14 +42,14 @@ class MainActivity : AppCompatActivity() {
             binding.tvToolbarTitle?.text = toolbarTitle
         }
 
-        binding.navHost.findNavController()
-            .addOnDestinationChangedListener { _, destination, _ ->
-                when (destination.id) {
-                    R.id.setupFragment, R.id.trackingFragment -> binding.bottomNavigationView.visibility =
-                        View.GONE
-                    else -> binding.bottomNavigationView.visibility = View.VISIBLE
-                }
-            }
+//        binding.navHost.findNavController()
+//            .addOnDestinationChangedListener { _, destination, _ ->
+//                when (destination.id) {
+//                    R.id.setupFragment, R.id.trackingFragment -> binding.bottomNavigationView.visibility =
+//                        View.GONE
+//                    else -> binding.bottomNavigationView.visibility = View.VISIBLE
+//                }
+//            }
     }
 
 

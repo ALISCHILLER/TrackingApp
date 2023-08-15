@@ -20,9 +20,10 @@ import com.msa.trackingapp.ui.viewModel.MainViewModel
 import com.msa.trackingapp.ui.viewModel.StatisticsViewModel
 import com.msa.trackingapp.util.CustomMarkerView
 import com.msa.trackingapp.util.TrackingUtility
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.round
 
-
+@AndroidEntryPoint
 class StatisticsFragment : Fragment() {
     private var _binding: FragmentStatisticsBinding? = null
     private val binding get() = _binding!!
@@ -108,7 +109,7 @@ class StatisticsFragment : Fragment() {
                 val bardataSet = BarDataSet(allAvgSpeeds, "Avg Speed over Time")
                 bardataSet.apply {
                     valueTextColor = Color.WHITE
-                    color = ContextCompat.getColor(requireContext(), R.color.colorAccent)
+                    color = ContextCompat.getColor(requireContext(), R.color.purple_200)
                 }
                 val lineData = BarData(bardataSet)
                 binding.barChart.data = lineData

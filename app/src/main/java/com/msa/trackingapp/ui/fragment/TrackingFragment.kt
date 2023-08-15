@@ -20,7 +20,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.msa.trackingapp.R
 import com.msa.trackingapp.data.db.TrackingEntity
 import com.msa.trackingapp.databinding.FragmentTrackingBinding
-import com.msa.trackingapp.service.TrackingService
+import com.msa.trackingapp.services.TrackingService
 import com.msa.trackingapp.ui.viewModel.MainViewModel
 import com.msa.trackingapp.ui.dialog.CancelRunDialog
 import com.msa.trackingapp.util.Constants.Companion.ACTION_PAUSE_SERVICE
@@ -229,13 +229,13 @@ class TrackingFragment : Fragment() {
             pauseTrackingService()
         } else {
             startOrResumeTrackingService()
-            Timber.d("Started service")
+            Timber.d("Started services")
         }
     }
 
 
     /**
-     * Pauses the tracking service
+     * Pauses the tracking services
      */
     private fun pauseTrackingService() =
         Intent(requireContext(), TrackingService::class.java).also {
@@ -245,7 +245,7 @@ class TrackingFragment : Fragment() {
 
 
     /**
-     * Starts the tracking service or resumes it if it is currently paused.
+     * Starts the tracking services or resumes it if it is currently paused.
      */
     private fun startOrResumeTrackingService() =
         Intent(requireContext(), TrackingService::class.java).also {
@@ -262,7 +262,7 @@ class TrackingFragment : Fragment() {
         findNavController().navigate(R.id.action_trackingFragment_to_listTrackingFragment)
     }
     /**
-     * Stops the tracking service.
+     * Stops the tracking services.
      */
     private fun stopTrackingService() =
         Intent(requireContext(), TrackingService::class.java).also {

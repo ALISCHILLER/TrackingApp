@@ -13,9 +13,10 @@ import com.msa.trackingapp.databinding.FragmentSettingsBinding
 import com.msa.trackingapp.ui.viewModel.MainViewModel
 import com.msa.trackingapp.util.Constants.Companion.KEY_NAME
 import com.msa.trackingapp.util.Constants.Companion.KEY_WEIGHT
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class SettingsFragment : Fragment() {
     @Inject
     lateinit var sharedPref: SharedPreferences

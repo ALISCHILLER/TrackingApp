@@ -5,8 +5,7 @@ import android.content.Context
 import android.location.Location
 import android.os.Build
 
-import com.google.android.gms.maps.model.LatLng
-import com.msa.trackingapp.service.Polyline
+import com.msa.trackingapp.services.Polyline
 import pub.devrel.easypermissions.EasyPermissions
 import java.util.concurrent.TimeUnit
 
