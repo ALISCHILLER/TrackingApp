@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.msa.trackingapp.R
 import com.msa.trackingapp.databinding.ActivityMainBinding
+import com.msa.trackingapp.util.Constants.Companion.ACTION_SHOW_TRACKING_ACTIVITY
 import com.msa.trackingapp.util.Constants.Companion.ACTION_SHOW_TRACKING_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setupWithNavController(navController)
         binding.bottomNavigationView.setOnNavigationItemReselectedListener { /* NO-OP */ }
 
-        navigateToTrackingFragmentIfNeeded(intent)
+//        navigateToTrackingFragmentIfNeeded(intent)
 
         if(name.isNotEmpty()) {
             val toolbarTitle = "Let's go, $name!"
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToTrackingFragmentIfNeeded(intent: Intent?) {
-        if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT) {
+        if(intent?.action == ACTION_SHOW_TRACKING_ACTIVITY) {
            binding.navHost.findNavController().navigate(R.id.action_global_trackingFragment)
         }
     }

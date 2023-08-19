@@ -17,4 +17,7 @@
     <string name="your_runs">اطلاعات ثبت شده </string>
     <string name="statistics">آمار</string>
     <string name="settings">تنظیمات</string>
+    <string name="welcome">خوش آمدید!\nلطفاً نام و وزن خود را وارد کنید</string>
+    <string name="userName">نام کاربری</string>
+    <string name="weight">وزن شما</string>
 </resources>

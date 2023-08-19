@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.msa.trackingapp"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 30
         versionCode = 1
         versionName = "1.0"
 
@@ -90,8 +90,8 @@ dependencies {
     // Google Maps Location Services
     implementation ("com.google.maps.android:maps-utils-ktx:3.4.0")
     implementation ("com.google.maps.android:android-maps-utils:3.5.2")
-    implementation ("com.google.android.gms:play-services-location:19.0.1")
-
+    implementation ("com.google.android.gms:play-services-location:17.0.0")
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
     // For developers using AndroidX in their applications
     implementation ("pub.devrel:easypermissions:3.0.0")
 
@@ -106,7 +106,7 @@ dependencies {
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
 
-    implementation ("androidx.work:work-runtime-ktx:2.7.1")
+    implementation ("androidx.work:work-runtime-ktx:2.8.1")
 
 
 }

@@ -31,12 +31,15 @@ import com.msa.trackingapp.util.Constants.Companion.MAP_ZOOM
 import com.msa.trackingapp.util.Constants.Companion.POLYLINE_COLOR
 import com.msa.trackingapp.util.Constants.Companion.POLYLINE_WIDTH
 import com.msa.trackingapp.util.TrackingUtility
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.util.Calendar
 import javax.inject.Inject
 import kotlin.math.round
 
 const val CANCEL_DIALOG_TAG = "CancelDialog"
+
+@AndroidEntryPoint
 class TrackingFragment : Fragment() {
     private var _binding: FragmentTrackingBinding? = null
     private val binding get() = _binding!!
@@ -174,10 +177,10 @@ class TrackingFragment : Fragment() {
     private fun updateTracking(isTracking: Boolean) {
         this.isTracking = isTracking
         if (!isTracking && curTimeInMillis > 0L) {
-            binding.btnToggleRun.text = "Start"
+            binding.btnToggleRun.text = "حرکت"
             binding.btnFinishRun.visibility = View.VISIBLE
         } else if (isTracking) {
-            binding.btnToggleRun.text = "Stop"
+            binding.btnToggleRun.text = "متوقف"
             menu?.getItem(0)?.isVisible = true
             binding.btnFinishRun.visibility = View.GONE
         }

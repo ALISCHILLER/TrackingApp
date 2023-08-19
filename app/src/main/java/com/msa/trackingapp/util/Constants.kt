@@ -16,6 +16,7 @@ class Constants {
         // Tracking Options
         const val LOCATION_UPDATE_INTERVAL = 5000L
         const val FASTEST_LOCATION_UPDATE_INTERVAL = 2000L
+        const val FASTEST_LOCATION_INTERVAL = 2000L
 
         // Map Options
         const val POLYLINE_COLOR = Color.RED
@@ -35,6 +36,7 @@ class Constants {
         const val NOTIFICATION_CHANNEL_ID = "tracking_channel"
         const val NOTIFICATION_CHANNEL_NAME = "Tracking"
         const val NOTIFICATION_ID = 1
+        const val ACTION_SHOW_TRACKING_ACTIVITY = "ACTION_SHOW_TRACKING_ACTIVITY"
 
         // Shared Preferences
         const val SHARED_PREFERENCES_NAME = "sharedPref"
